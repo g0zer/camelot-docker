@@ -10,7 +10,7 @@ RUN apt-get install ghostscript python3-tk -y
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
-
+ENV FLASK_APP="./main.py"
 COPY . /app
-
-CMD [ "python", "main.py" ]
+EXPOSE 5000
+CMD ["flask", "run","--host","0.0.0.0","--port","5000"]
