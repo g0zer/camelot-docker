@@ -9,13 +9,6 @@ import os
 app = Flask(__name__)
 
 
-
-
-@app.route('/hi')
-def hi():
-    return jsonify("hello!")
-
-
 @app.route('/extract', methods=['POST'])
 def go_camelot():
     try:
